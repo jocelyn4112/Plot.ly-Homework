@@ -1,0 +1,72 @@
+
+d3.json("sample.json", function(data) {
+  console.log(data);
+});
+
+// <script>
+// d3.csv("samples.json", function(data) {
+//     for (var i = 0; i < data.length; i++) {
+//         console.log(data[i].id);
+//         console.log(data[i].ethnicity);
+//         console.log(data[i].gender);
+//         console.log(data[i].age);
+//         console.log(data[i].location);
+//         console.log(data[i].bbtype);
+//         console.log(data[i].wfreq);
+//     }
+// });
+// </script>
+
+
+
+// Create an array of each smaple valeu 
+var id = Object.values(data.id);
+var ethnicity = Object.values(data.ethnicity);
+var gender = Object.values(data.gender);
+var age = Object.values(data.age);
+var location = Object.values(data.location);
+var bbtype = Object.values(data.bbtype);
+var wfreq = Object.values(data.wfreq);
+
+// Create an array of music provider labels
+var sample labels = Object.keys(data.us);
+
+// Display the default plot
+function init() {
+  var data = [{
+    values: us,
+    labels: labels,
+    type: "h-bar"
+  }];
+
+  var layout = {
+    height: 600,
+    width: 800
+  };
+
+  Plotly.newPlot("h-bar", data, layout);
+}
+
+// On change to the DOM, call getData()
+d3.selectAll("#selDataset").on("change", getData);
+
+// Function called by DOM changes
+function getData() {
+  var dropdownMenu = d3.select("#selDataset");
+  // Assign the value of the dropdown menu option to a variable
+  var dataset = dropdownMenu.property("value");
+  // Initialize an empty array for the country's data
+  var data = [];
+
+  if (dataset == 'us') {
+      data = us;
+  }
+  else if (dataset == 'uk') {
+      data = uk;
+  }
+  else if (dataset == 'canada') {
+      data = canada;
+  }
+  // Call function to update the chart
+  updatePlotly(data);
+}
