@@ -26,6 +26,7 @@
           <h5>Test Subject ID No.:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
+        <!-- Demographic Info-->
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title">Demographic Info</h3>
@@ -33,13 +34,16 @@
           <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
+      <!-- Bar Chart-->
       <div class="col-md-5">
         <div id="bar"></div>
       </div>
+      <!-- Gauge-->
       <div class="col-md-5">
         <div id="gauge"></div>
       </div>
     </div>
+    <!-- Bubble Chart-->
     <div class="row">
       <div class="col-md-12">
         <div id="bubble"></div>
@@ -58,6 +62,19 @@
   
     <script src="plots.js"></script>
   -->
+  <!--Dropdown Selection Begin-->
+  <body>
+
+    <div id="menu"></div>
+  
+    <script src="script.js"></script>
+  
+    <select id="selectOption">
+      <option value="option1">Menu Option 1</option>
+      <option value="option2">Menu Option 2</option>
+    </select>
+  </body>
+  <!--Dropdown Selection End-->
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
