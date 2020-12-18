@@ -1,9 +1,13 @@
 
-
-
 d3.json("samples.json", function(data) {
-  console.log(data);
-});
+    
+    console.log(data);
+ 
+  });
+
+//d3.json("samples.json", function(data) {
+  //console.log(data);
+//});
 
 // <script>
 // d3.csv("samples.json", function(data) {
@@ -32,7 +36,7 @@ var wfreq = Object.values(data.wfreq);
 
 //DropDownLabels 
 // Create an array of  labels
-var sample labels = Object.keys(data.us);
+var sample_labels = Object.keys(data.us);
 
 // Display the default plot
 function init() {
@@ -114,7 +118,7 @@ Plotly.newPlot("plot", data, layout);
 
 
 // H Chart 3
-/ Filter the data for movies with an IMDb rating greater than 8.9
+// Filter the data for movies with an IMDb rating greater than 8.9
 //  and then graph each title on the x-axis and the respective metascore on the y-axis.
 
 // 1. Use the filter method to create a custom filtering function
