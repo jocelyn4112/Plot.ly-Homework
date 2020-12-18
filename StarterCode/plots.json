@@ -1,5 +1,5 @@
 
-d3.json("sample.json", function(data) {
+d3.json("samples.json", function(data) {
   console.log(data);
 });
 
@@ -19,7 +19,7 @@ d3.json("sample.json", function(data) {
 
 
 
-// Create an array of each smaple valeu 
+// Create an array of each smaple value
 var id = Object.values(data.id);
 var ethnicity = Object.values(data.ethnicity);
 var gender = Object.values(data.gender);
